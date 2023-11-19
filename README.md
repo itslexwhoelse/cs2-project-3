@@ -121,31 +121,3 @@ You are to exhibit good “OOP-style”. That means you are to use the design pr
 * limit the amount of static methods outside of the Main class
 * components should be independent: that is, a HumanPlayer component should not need to know about the implementation details of a SimplePlayer component, or vice versa.
 * the visibility of instance variables should be limited to “private” as much as possible; use accessor methods (“getters”) instead.
-
-Grading
-=======
-
-Out of 100 points:
-
-* 25 points if your submission **compiles** without any errors
-* 25 points for **functionality**:
-    * Three player types should be available: Simple Computer, Smarter Computer, and Human Player
-    * All 9 versions of the game (Human vs Simple, Human vs Smarter, Human vs Human, etc) should be allowed
-    * You must correctly determine the winner in all cases.
-* 30 points for **object-oriented design/style**. Your code should be lightly coupled. You need to have several components that should be independent and testable. You should limit the usage of static methods as much as possible. Of course, the normal “style” considerations still apply: your variables should have good names, your methods should each do one job, your code should have comments explaining why things are done a certain way.
-* 20 points for **documentation** / written explanation. In the "explanation.md" file on replit, write a short explanation of _how_ you solved the problem. Clearly explain how the various components are implemented and the different choices you made. For example, if you use inheritance, explain why. If you have an interface for a particular component, explain why. For the “Smarter” computer player, clearly document the strategy the player uses.
-    * 12 points for explaining the object-oriented design of your code (did you use inheritance, interfaces, polymorphism? How did that help? How was it a challenge? What did you learn?).
-        * 2 points for **grammar**.
-        * 5 points for **comprehensiveness**: your explanation should correctly match what you did (don't say you used interfaces if you didn't, etc), and it should explain the reasons for your object-oriented design. It should explain how you were able to solve some of the harder coding challenges involved as well.
-        * 5 points for **clarity**: your explanation should be understandable.
-    * 8 points for explaining the smarter strategy.
-        * 2 points for **grammar**.
-        * 3 points for **comprehensiveness**: your explanation should correctly match what you wrote, explain how the smart strategy works, and how well it does.
-        * 3 points for **clarity**: your explanation should be understandable.
-
-Submission
-==========
-
-You are to submit the assignment through Replit as usual. The project is due on **Monday, November 27, at 11:59 PM**.
-
-You will be giving a **demo** of your project during the last two weeks of class. This will count as a presentation grade. A rubric for this will be posted on BrightSpace, but it will be based on clarity, your explanation of your design, your smarter strategy, and your code.
