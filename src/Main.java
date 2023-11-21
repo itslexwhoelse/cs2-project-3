@@ -16,6 +16,10 @@ public class Main {
         Board.printBoard();
         playerOne.check();
         playerTwo.check();
+        //implement better playing rules etc etc
+        playerOne.take();
+        playerTwo.take();
+
     }
 
     public static Player createPlayer(int playerNum) {
@@ -28,13 +32,13 @@ public class Main {
         int choice = in.nextInt();
 
             if (choice == 1) { //human
-                new HumanPlayer(in);
+                return new HumanPlayer(in);
             } else if (choice == 2) { //dumb
-                new DumbCpu();
+                return new DumbCpu();
             } else if (choice == 3) { //random
-                new RandomCpu();
+                return new RandomCpu();
             } else if (choice == 4) { //smart
-                new SmartCpu();
+                return new SmartCpu();
             }
             return null;
     }
