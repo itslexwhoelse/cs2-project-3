@@ -11,12 +11,15 @@ public class RandomCpu implements Player {
     }
 
     public void take() {
-//        Random random = new Random();
-//
-//
-//        Board.boardMatrix[row][0] = stones;
-//        Board.printNewBoard();
-        System.out.println("Placeholder");
+        Random random = new Random();
+        int stones = 0;
+        int row = random.nextInt(Board.getRows());
+        if(Board.rowArray[row] >= 0) {
+            stones = random.nextInt(Board.rowArray[row]);
+        }
+        System.out.println("Random CPU takes " + stones + " stones from row " + row);
+        Board.rowArray[row] = -stones;
+        Board.printNewBoard(stones);
     }
 }
 
