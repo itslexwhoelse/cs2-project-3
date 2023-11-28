@@ -42,7 +42,7 @@ public class Board {
     public static void printBoard(){
         for (int i = 0; i <= rows; i++) {
             System.out.print("Row " + i + ": ");
-            for (int j = 0; j <= rowArray[i] + 2;j++ ) {
+            for (int j = 0; j <= rowArray[i] -1;j++ ) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -52,8 +52,9 @@ public class Board {
 
 
     public static void printNewBoard(int less){
+        System.out.println(Arrays.toString(rowArray));
         takenStones += less;
-        for (int i = 0; i < rowArray.length; i++) {
+        for (int i = 0; i <= rows; i++) {
             //prints row number
             System.out.print("Row " + i + ": ");
             for (int j = 0; j < rowArray[i]; j++) {

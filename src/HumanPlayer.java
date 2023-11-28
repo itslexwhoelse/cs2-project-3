@@ -16,7 +16,7 @@ public class HumanPlayer implements Player{
         if (stones > Board.rowArray[row]) { //anything more than the stones in the row will just take everything.
             stones = Board.rowArray[row]; // this is just so ill stop crashing the program while testing.
         }
-        Board.rowArray[row] = -stones;
+        Board.rowArray[row] = Board.rowArray[row] - stones;
         Board.printNewBoard(stones);
     }
 
