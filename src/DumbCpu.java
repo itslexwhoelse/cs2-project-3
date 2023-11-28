@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class DumbCpu implements Player{
     private int playerNumber;
     public DumbCpu() {
-        String player = "dumb cpu";
     }
 
     public String check() {
@@ -20,11 +19,11 @@ public class DumbCpu implements Player{
         int row = 0;
         while (Board.rowArray[row] == 0) {
             row += 1;
-            if (row > 4) {
+            if (row > Board.rowArray.length) {
                 break;
             }
         }
-            System.out.println("Dumb CPU takes " + stones + " stones from row " + row);
+            System.out.println("Player "+ playerNumber +": Dumb CPU takes " + stones + " stones from row " + row);
             Board.rowArray[row] = Board.rowArray[row] - stones;
             Board.printNewBoard(stones);
     }

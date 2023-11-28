@@ -23,7 +23,7 @@ public class RandomCpu implements Player {
                 row = random.nextInt(Board.getRows()+1);
             }
         stones = random.nextInt(1,Board.rowArray[row]+1);
-        System.out.println("Random CPU takes " + stones + " stones from row " + row);
+        System.out.println("Player "+ playerNumber +": Random CPU takes " + stones + " stones from row " + row);
         Board.rowArray[row] = Board.rowArray[row] - stones;
         Board.printNewBoard(stones);
     }

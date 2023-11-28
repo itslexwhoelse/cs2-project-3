@@ -2,6 +2,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    /*
+    https://github.com/itslexwhoelse/cs2-project-3
+    if you're looking at this from my github, here's some recursion.
+     */
+
+
     public static void main(String[] args) {
     play();
 
@@ -37,7 +43,9 @@ public class Main {
     public static void play() {
         String winner;
         Player playerOne = createPlayer(1);
+        playerOne.assign(1);
         Player playerTwo = createPlayer(2);
+        playerTwo.assign(2);
         Board board = new Board();
         Board.printBoard();
         System.out.println("Player 1 is" + playerOne.check());
