@@ -1,10 +1,19 @@
 import java.util.Scanner;
 
 public class HumanPlayer implements Player{
-    public HumanPlayer(Scanner in) {
-        String player = "human";
-    }
+    private int playerNumber;
 
+    public HumanPlayer() {
+    }
+    public String check() {
+        return " a human";
+    }
+    public void assign(int number) {
+        playerNumber = number;
+    }
+    public int getPlayerNumber() {
+        return playerNumber;
+    }
     public void take() {
         Scanner in = new Scanner(System.in);
         System.out.println("what row?");
@@ -16,10 +25,5 @@ public class HumanPlayer implements Player{
         }
         Board.rowArray[row] = Board.rowArray[row] - stones;
         Board.printNewBoard(stones);
-    }
-
-
-    public void check() {
-        System.out.println("I am a human");
     }
 }

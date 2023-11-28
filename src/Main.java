@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +17,7 @@ public class Main {
         int choice = in.nextInt();
         switch (choice) {
             case 1 -> {
-                return new HumanPlayer(in);
+                return new HumanPlayer();
             }
             case 2 -> {
                 return new DumbCpu();
@@ -34,26 +35,25 @@ public class Main {
 
 
     public static void play() {
-        boolean playing = true;
         String winner;
         Player playerOne = createPlayer(1);
         Player playerTwo = createPlayer(2);
         Board board = new Board();
         Board.printBoard();
-        playerOne.check();
-        playerTwo.check(); //prints what the player type is
-        while (playing) {
+        System.out.println("Player 1 is" + playerOne.check());
+        System.out.println("Player 2 is" + playerTwo.check());
+        while (true) {
                 playerOne.take();
-                if(Board.getCurrentStones() == 0) {
+                if(Arrays.stream(Board.rowArray).sum() == 0) {
                     winner = "Player One Wins!";
                     System.out.println(winner);
-                    playing = false;
+                    break; //someone won, leave
                 }
                 playerTwo.take();
-            if(Board.getCurrentStones() == 0) {
+            if(Arrays.stream(Board.rowArray).sum() == 0) {
                 winner = "Player Two Wins!";
                 System.out.println(winner);
-                playing = false;
+                break; //the other person won. LEAVE
             }
         }
 
