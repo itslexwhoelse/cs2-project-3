@@ -54,7 +54,7 @@ public class Board {
     public static void printNewBoard(int less){
         System.out.println(Arrays.toString(rowArray));
         takenStones += less;
-        for (int i = 0; i <= rows; i++) { //
+        for (int i = 0; i <= rows; i++) {
             //prints row number
             System.out.print("Row " + i + ": ");
             for (int j = 0; j < rowArray[i]; j++) {
