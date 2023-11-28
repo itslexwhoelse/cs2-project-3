@@ -6,7 +6,7 @@ public class Board {
     static int[] rowArray;
     private static int initStones;
     private static int currentStones;
-    private static int takenStones;
+
 
 
     public Board() {
@@ -19,18 +19,11 @@ public class Board {
         for (int i = 0; i <= rows; i++) {
             rowArray[i] = i+3;
             initStones += i+3;
-
         }
         System.out.println("Initialized row array " + Arrays.toString(rowArray) + " with " + initStones + " stones");
         currentStones = initStones;
     }
 
-    public static int getStones() {
-        for (int i = 0; i <= rows; i++) {
-            currentStones += i+3;
-        }
-        return currentStones;
-    }
     public static int getRows() {
         return rows;
     }
@@ -53,7 +46,7 @@ public class Board {
 
     public static void printNewBoard(int less){
         System.out.println(Arrays.toString(rowArray));
-        takenStones += less;
+        currentStones -= less;
         for (int i = 0; i <= rows; i++) {
             //prints row number
             System.out.print("Row " + i + ": ");
@@ -63,11 +56,9 @@ public class Board {
             }
             System.out.println();
         }
-        System.out.println(subtractStones() + " stones left");
+        System.out.println(currentStones + " stones left");
     }
-    public static int subtractStones(){
-        return currentStones-takenStones;
-    }
+
 
 
 

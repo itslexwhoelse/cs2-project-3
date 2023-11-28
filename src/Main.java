@@ -1,19 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
-/*
-*
-*
-*
-*
-*
-*/
-
     public static void main(String[] args) {
     play();
+
     }
-
-
 
     public static Player createPlayer(int playerNum) {
         Scanner in = new Scanner(System.in);
@@ -44,26 +35,28 @@ public class Main {
 
     public static void play() {
         boolean playing = true;
-        int initStones = Board.getStones();
-        int currentTotalStones= initStones;
-        int currentPlayer = 1;
+        String winner;
         Player playerOne = createPlayer(1);
         Player playerTwo = createPlayer(2);
         Board board = new Board();
         Board.printBoard();
         playerOne.check();
         playerTwo.check(); //prints what the player type is
-
         while (playing) {
-            if (currentTotalStones == 0) {
-                playing = false; //exit if the game is over
-            } else {
                 playerOne.take();
+                if(Board.getCurrentStones() == 0) {
+                    winner = "Player One Wins!";
+                    System.out.println(winner);
+                    playing = false;
+                }
                 playerTwo.take();
+            if(Board.getCurrentStones() == 0) {
+                winner = "Player Two Wins!";
+                System.out.println(winner);
+                playing = false;
             }
-
-
         }
+
     }
 
 }
